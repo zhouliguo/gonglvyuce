@@ -1,0 +1,74 @@
+[
+    {
+        "datetime": 1745165047,
+        "temp": 27.0,
+        "weatherPic": "sunny",
+        "sunrise": 1745187358,
+        "sunset": 1745233459,
+        "weatherPicName": "晴",
+        "sunshineDuration": 46101
+    },
+    {
+        "datetime": 1745175841,
+        "temp": 25.0,
+        "weatherPic": "sunny",
+        "sunrise": 1745187358,
+        "sunset": 1745233459,
+        "weatherPicName": "晴",
+        "sunshineDuration": 46101
+    },
+    {
+        "datetime": 1745186579,
+        "temp": 24.0,
+        "weatherPic": "rainy-s",
+        "sunrise": 1745187358,
+        "sunset": 1745233459,
+        "weatherPicName": "大雨",
+        "sunshineDuration": 46101
+    },
+    {
+        "datetime": 1745197355,
+        "temp": 27.0,
+        "weatherPic": "cloudy",
+        "sunrise": 1745187358,
+        "sunset": 1745233459,
+        "weatherPicName": "多云",
+        "sunshineDuration": 46101
+    },
+    {
+        "datetime": 1745208295,
+        "temp": 34.0,
+        "weatherPic": "cloudy",
+        "sunrise": 1745187358,
+        "sunset": 1745233459,
+        "weatherPicName": "多云",
+        "sunshineDuration": 46101
+    },
+    {
+        "datetime": 1745219024,
+        "temp": 37.0,
+        "weatherPic": "cloudy",
+        "sunrise": 1745187358,
+        "sunset": 1745233459,
+        "weatherPicName": "多云",
+        "sunshineDuration": 46101
+    },
+    {
+        "datetime": 1745229868,
+        "temp": 34.0,
+        "weatherPic": "cloudy",
+        "sunrise": 1745187358,
+        "sunset": 1745233459,
+        "weatherPicName": "多云",
+        "sunshineDuration": 46101
+    },
+    {
+        "datetime": 1745240720,
+        "temp": 29.0,
+        "weatherPic": "sunny",
+        "sunrise": 1745187358,
+        "sunset": 1745233459,
+        "weatherPicName": "晴",
+        "sunshineDuration": 46101
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "datetime": 1751536945,
+        "temp": 32.0,
+        "weatherPic": "cloudy",
+        "sunrise": 1751493598,
+        "sunset": 1751542275,
+        "weatherPicName": "多云",
+        "sunshineDuration": 48677
+    },
+    {
+        "datetime": 1751547978,
+        "temp": 28.0,
+        "weatherPic": "cloudy",
+        "sunrise": 1751493598,
+        "sunset": 1751542275,
+        "weatherPicName": "多云",
+        "sunshineDuration": 48677
+    }
+]
