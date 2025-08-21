@@ -9,7 +9,7 @@ import sys
 # 获取用于模型输入的历史数据：时间、天气、功率
 def get_history_data():
     image = cv2.imread('image.jpg')
-    return
+    return image
 
 def socket_init(ip_address = 'localhost', port = 1080):
     # 初始化socket
@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     socket_c = socket_init(ip_address, port)
 
-    required = 4*12*4   #预测未来4小时功率，每小时12个值
+    required = 1000*4   #预测未来4小时功率，每小时12个值
 
     while True:
         history_data = get_history_data()
