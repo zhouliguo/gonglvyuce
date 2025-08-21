@@ -23,7 +23,7 @@ if __name__ == '__main__':
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     test_transform = transforms.Compose([transforms.Resize(256),transforms.CenterCrop(224),transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
 
-    socket_s = socket_init('131.159.60.171', 1080)
+    socket_s = socket_init('192.168.1.7', 1080)
     model = model_init(device)
 
     while True:
