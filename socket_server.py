@@ -6,7 +6,7 @@ import torch
 import torchvision
 from torchvision import transforms
 
-def socket_init(ip_address = '112.0.133.147', port = 1920, backlog = 50):
+def socket_init(ip_address = 'localhost', port = 1080, backlog = 50):
     socket_s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # 创建socket对象
     socket_s.bind((ip_address, port))   # 绑定地址
     socket_s.listen(backlog)  # 建立backlog个监听
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     test_transform = transforms.Compose([transforms.Resize(256),transforms.CenterCrop(224),transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
 
-    socket_s = socket_init('localhost', 1920)
+    socket_s = socket_init('localhost', 1080)
     model = model_init(device)
 
     while True:
