@@ -29,4 +29,4 @@ def power_prediction():
     return predicted_power, 200
  
 if __name__ == '__main__':
-    app.run(debug=True, host='131.159.60.171', port=8000)
+    app.run(debug=True, host='192.168.110.93', port=1080)
