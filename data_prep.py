@@ -12,10 +12,10 @@ power = []
 for json_file in json_files:
     y_m_d = os.path.basename(json_file).split('.')[0].split('_')[1].split('-')
     delta_middle = (date(int(y_m_d[0]), 7, 2) - date(int(y_m_d[0]), 1, 1)).days
-    delta = (date(int(y_m_d[0]), 12, 31) - date(int(y_m_d[0]), 1, 1)).days
+    delta = (date(int(y_m_d[0]), int(y_m_d[1]), int(y_m_d[2])) - date(int(y_m_d[0]), 1, 1)).days
     if delta > delta_middle:
         delta = delta_middle - (delta - delta_middle)
-    day.append(np.ones((288)) * (date(int(y_m_d[0]), int(y_m_d[1]), int(y_m_d[2])) - date(int(y_m_d[0]), 1, 1)).days)
+    day.append(np.ones((288)) * delta)
     
     time.append(list(range(144)) + list(range(144, 0, -1)))
     

@@ -2,10 +2,18 @@ import numpy as np
 import json
 import requests
 
-# 获取历史数据：日期、时间、功率……，Json格式
-def get_history_data():
-    history_data = np.random.uniform(0, 10000, (3,48)).astype(np.float32)
-    return json.dumps(history_data.tolist())
+# 功能：获取历史数据序列，序列中每一项包含：日期(年、月、日）、时间（0、1、2……287，一天中第n个5分钟）、功率值……，Json格式
+# 参数：sequence_len，获取数据序列的长度
+def get_history_data(sequence_len = 240):
+    year = np.ones(sequence_len, np.int32) * 2025
+    month = np.ones(sequence_len, np.int32) * 8
+    day = np.ones(sequence_len, np.int32) * 31
+    time = np.array(range(sequence_len)).astype(np.int32)
+    power = np.random.uniform(0, 10000, sequence_len).astype(np.float32)
+
+    history_data = np.concatenate((year, month, day, time, power))
+    history_data = history_data.tolist()
+    return json.dumps(history_data)
 
 if __name__ == '__main__':
     history_data = get_history_data()
