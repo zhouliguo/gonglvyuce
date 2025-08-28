@@ -49,11 +49,12 @@ def train_val(cfg):
     if cfg.device == 'cpu':
         device = torch.device('cpu')
     else:
-        if not torch.cuda.is_available():
-            device = torch.device('cpu')
-        else:
+        if torch.cuda.is_available():
             os.environ['CUDA_VISIBLE_DEVICES'] = cfg.device
-            device = torch.device('cuda:'+str(cfg.device))
+            device = torch.device('cuda:0')
+        else:
+            device = torch.device('cpu')
+            
 
     train_data = Power_Dataset(cfg=cfg, phase='train')
     val_data = Power_Dataset(cfg=cfg, phase='val')

@@ -22,11 +22,11 @@ if __name__ == '__main__':
     headers = {'Content-Type': 'application/json'}
     
     response = requests.post(address, history_data, headers=headers)   # 向服务器传输历史数据，并获得预测的功率数据
-    pred_data = response.json()
+    pred_power = response.json()
 
     # response = requests.get('http://localhost:8000/')
     # pred_data = response.text
     # print(pred_data)
 
-    pred_data = np.array(pred_data, dtype=np.float32)
-    print('pred data', pred_data)
+    pred_power = np.array(pred_power, dtype=np.float32)
+    print('pred power', pred_power)
