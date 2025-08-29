@@ -101,7 +101,9 @@ def power_prediction():
     return predicted_power, 200
  
 if __name__ == '__main__':
-    history_data = get_history_data()
-    history_data = history_data_prep(history_data)
-    predicted_power = dnn_model(history_data)
-    #app.run(debug=True, host='192.168.110.93', port=1080)
+    #history_data = get_history_data()
+    #history_data = history_data_prep(history_data)
+    #predicted_power = dnn_model(history_data)
+    ip = '192.168.110.93'
+    port = 1080
+    app.run(debug=True, host=ip, port=port)
