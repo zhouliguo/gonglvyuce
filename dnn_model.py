@@ -122,6 +122,8 @@ class TFMModel(nn.Module):
         #bos = torch.zeros(x.size(0), 1, self.out_feat_size).to(x.device)
         #x = torch.concat((bos,x), dim=1)
         #t = x[:, -1:]
+        self.pos = self.pos.to(x.device)
+        self.pos_t = self.pos_t.to(x.device)
 
         x = self.embedding_fc(x)  # 对编码器的输入x进行embedding
         x = x + self.pos          # 加上位置码

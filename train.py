@@ -33,8 +33,8 @@ def train_val(cfg):
     if cfg.device == 'cpu':
         device = torch.device('cpu')
     else:
+        os.environ['CUDA_VISIBLE_DEVICES'] = cfg.device
         if torch.cuda.is_available():
-            os.environ['CUDA_VISIBLE_DEVICES'] = cfg.device
             device = torch.device('cuda:0')
         else:
             device = torch.device('cpu')
@@ -80,6 +80,7 @@ def train_val(cfg):
                 loss_sum = 0
 
             loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=10.0)
             optimizer.step()
         
         scheduler.step()
@@ -89,9 +90,9 @@ def parse_cfg():
     parser.add_argument('--epochs', type=int, default=100, help='total number of training epochs')
     parser.add_argument('--device', type=str, default='1', help='e.g. cpu or 0 or 0,1,2,3')
     parser.add_argument('--data-path', type=str, default='data.csv', help='e.g. cpu or 0 or 0,1,2,3')
-    parser.add_argument('--batch-size', type=int, default=24, help='e.g. cpu or 0 or 0,1,2,3')
+    parser.add_argument('--batch-size', type=int, default=48, help='e.g. cpu or 0 or 0,1,2,3')
     parser.add_argument('--num-workers', type=int, default=0, help='e.g. cpu or 0 or 0,1,2,3')
-    parser.add_argument('--lr-init', type=float, default=0.01, help='e.g. cpu or 0 or 0,1,2,3')
+    parser.add_argument('--lr-init', type=float, default=0.1, help='e.g. cpu or 0 or 0,1,2,3')
     parser.add_argument('--lr-final', type=float, default=0.0001, help='e.g. cpu or 0 or 0,1,2,3')
 
     parser.add_argument('--in-seq-len', type=int, default=240, help='e.g. cpu or 0 or 0,1,2,3')
